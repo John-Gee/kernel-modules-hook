@@ -8,4 +8,4 @@ Target = usr/lib/modules/*/vmlinuz
 Description = Restoring Linux kernel modules...
 When = PostTransaction
 Depends = coreutils
-Exec = /bin/sh -xc 'KVER="${KVER:-$(uname -r)}"; if test -e "/usr/lib/modules/backup/${KVER}"; then cp -ral "/usr/lib/modules/backup/${KVER}" /usr/lib/modules/; fi; rm -rf /usr/lib/modules/backup'
+Exec = /bin/sh -xc 'KVER="${KVER:-$(uname -r)}"; if test -e "/usr/lib/modules/backup/${KVER}"; then cp -ral "/usr/lib/modules/backup/${KVER}" /usr/lib/modules/; fi; rm -rf /usr/lib/modules/backup; dkms_backup_dir="/usr/lib/modules/dkms-backup"; if test -e "$dkms_backup_dir"; then for module_dir in "$dkms_backup_dir"/*; do module_name=$(basename "$module_dir"); module_version=$(ls "$module_dir" | grep -E "^[0-9]+\.[0-9]+\.[0-9]+"); if test -e "$module_dir/$module_version/$KVER"; then cp -ral "$module_dir/"* "/var/lib/dkms/$module_name/"; fi; done; rm -rf "$dkms_backup_dir"; fi;'
