@@ -3,7 +3,7 @@ Description=Clean up modules from old kernels
 
 [Service]
 Type=oneshot
-ExecStart=/bin/sh -exc 'for i in /usr/lib/modules/[0-9]*; do if [ "$${i##*/}" = "%v" ] || pacman -Qo "$${i}" > /dev/null; then continue; fi; mkdir -p /usr/lib/modules/.old; mv "$${i}" /usr/lib/modules/.old/; done; dkms_backup_dir="/usr/lib/modules/dkms-backup"; if [ -d "$$dkms_backup_dir" ]; then for module_dir in "$$dkms_backup_dir"/*; do module_name=$$(basename "$$module_dir"); module_version=$$(ls "$$module_dir" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+'); dkms remove -m "$$module_name" -v "$$module_version" -k "$$KVER" || true; done; fi'
+ExecStart=/bin/sh -ec 'for i in /usr/lib/modules/[0-9]*; do if [ "$${i##*/}" = "%v" ] || pacman -Qo "$${i}" > /dev/null; then continue; fi; mkdir -p /usr/lib/modules/.old; mv "$${i}" /usr/lib/modules/.old/; done; dkms_backup_dir="/usr/lib/modules/dkms-backup"; if [ -d "$$dkms_backup_dir" ]; then for module_dir in "$$dkms_backup_dir"/*; do module_name=$$(basename "$$module_dir"); module_version=$$(ls "$$module_dir" | grep -E '^[0-9]+\.[0-9]+\.[0-9]+'); dkms remove -m "$$module_name" -v "$$module_version" -k "$$KVER" || true; done; fi'
 
 [Install]
 WantedBy=default.target
