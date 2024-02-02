@@ -14,7 +14,7 @@ source=("linux-modules-cleanup.conf"
 		"10-linux-modules-pre.hook"
 		"UNLICENSE")
 sha256sums=('4169b44c297ddb7aad2220c6eba7c7942e3396f92528c59617955ab5560cb4cf'
-            '60107cb64b5fc4354547e6f61ed1575912d2cb805db02e2af3dcb13606de0d29'
+            'cc9ac0ca6b41a86a0e8fb64dd3d6f72845bcc5d863b32b6c22be559482d6a30f'
             '15d698aeb751217f19fb2722f7bc3b428836057ca8a8ce0424a2e9b70626407c'
             'cc98453da32e76b02976d5c7e3fbc23b78d369d097b9bb7d73b7438aad0267f0'
             '7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c')
