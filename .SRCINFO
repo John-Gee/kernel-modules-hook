@@ -1,20 +1,22 @@
 pkgbase = kernel-modules-hook
 	pkgdesc = Keeps your system fully functional after a kernel upgrade
-	pkgver = 0.1.8.1
+	pkgver = 0.1.8.2
 	pkgrel = 1
-	url = https://github.com/saber-nyan/kernel-modules-hook
+	url = https://github.com/john-gee/kernel-modules-hook
 	install = kernel-modules-hook.install
 	arch = any
 	license = UNLICENSE
+	source = cleanup-old-modules.sh
 	source = linux-modules-cleanup.conf
 	source = linux-modules-cleanup.service
 	source = 10-linux-modules-post.hook
 	source = 10-linux-modules-pre.hook
 	source = UNLICENSE
+	sha256sums = 088aa7062f2ee1e8a3777fa4bd74fd0ee98d61b3b708e676b5e940ec4a2d6998
 	sha256sums = 4169b44c297ddb7aad2220c6eba7c7942e3396f92528c59617955ab5560cb4cf
-	sha256sums = cc9ac0ca6b41a86a0e8fb64dd3d6f72845bcc5d863b32b6c22be559482d6a30f
-	sha256sums = 15d698aeb751217f19fb2722f7bc3b428836057ca8a8ce0424a2e9b70626407c
-	sha256sums = cc98453da32e76b02976d5c7e3fbc23b78d369d097b9bb7d73b7438aad0267f0
+	sha256sums = 3d31935b0ff9697e4e9589290a43242df3aeebf2204c0be40fa266c2fb2fc248
+	sha256sums = 10d0b17c3e1cea447be547d617c13b5fc9aaaeae84b34573294dd5fe54acce68
+	sha256sums = 7c3380580323b615023bd4ca0669f63d0af0a4fea83ba8c0892701d759de591a
 	sha256sums = 7e12e5df4bae12cb21581ba157ced20e1986a0508dd10d0e8a4ab9a4cf94e85c
 
 pkgname = kernel-modules-hook
