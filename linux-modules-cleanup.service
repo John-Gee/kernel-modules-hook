@@ -3,7 +3,8 @@ Description=Clean up modules from old kernels
 
 [Service]
 Type=oneshot
-ExecStart=/usr/bin/cleanup-old-modules.sh %v
+EnvironmentFile=-/etc/cleanup-old-modules.conf
+ExecStart=/bin/sh -c 'exec "${SHELL_PATH:-/bin/sh}" /usr/bin/cleanup-old-modules.sh %v'
 
 [Install]
 WantedBy=multi-user.target
