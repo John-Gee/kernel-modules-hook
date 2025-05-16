@@ -13,6 +13,7 @@
 
 # add files that don't have an online source
 cleanup-old-modules.sh
+cleanup-old-modules.conf
 kernel-modules-hook.install
 linux-modules-cleanup.conf
 linux-modules-cleanup.service
